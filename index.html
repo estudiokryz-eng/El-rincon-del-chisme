@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10091f">
+  <meta name="description" content="El Rincón del Chisme: una comunidad para compartir libros, música, charlas, juegos, arte y amistades.">
+  <title>꧁❥ Eℓ Rιⁿᶜóⁿ ∂eℓ Cнιѕмe ✩</title>
+  <style>
+    :root {
+      --bg: #0b0714; --panel: #151026; --panel2: #1d1430;
+      --violet: #b77cff; --lavender: #e0c2ff; --pink: #efb5ff;
+      --text: #f7efff; --muted: #c9b9dc; --line: rgba(202,145,255,.42);
+      --glow: 0 0 24px rgba(176,104,255,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 10% 5%, rgba(98,48,153,.25), transparent 35%),
+        radial-gradient(ellipse at 90% 35%, rgba(93,38,133,.18), transparent 34%),
+        var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .stars { position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: .4;
+      background-image: radial-gradient(#e5c5ff 1px, transparent 1.5px), radial-gradient(#9b67d7 1px, transparent 1.5px);
+      background-size: 83px 83px, 127px 127px; background-position: 10px 20px, 40px 70px; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px);
+      background: rgba(11,7,20,.86); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { text-decoration: none; font-family: Georgia, serif; font-size: clamp(17px, 2.2vw, 25px); color: var(--lavender); text-shadow: 0 0 16px #a35cff66; }
+    .links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .links a { text-decoration: none; color: var(--muted); font-size: 14px; }
+    .links a:hover { color: white; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px;
+      padding: 12px 20px; font-weight: 700; text-decoration: none; border: 1px solid #d4a5ff; color: white;
+      background: linear-gradient(135deg, #8d4dd4, #6331a0); box-shadow: 0 0 22px #9a55d944; transition: transform .2s, filter .2s; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
+    .btn.secondary { background: rgba(183,124,255,.08); box-shadow: none; }
+    .hero { padding: 86px 0 70px; min-height: 480px; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden; }
+    .moon { position: absolute; font-size: 100px; opacity: .16; top: 18px; right: 9%; filter: drop-shadow(0 0 24px #bd7cff); }
+    .hero .eyebrow { color: var(--pink); letter-spacing: .19em; text-transform: uppercase; font-size: 12px; }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 6vw, 64px); line-height: 1.2; margin: 12px auto; color: var(--lavender); text-shadow: 0 0 28px #bd76ff55; }
+    .hero p { max-width: 720px; margin: 18px auto 28px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); }
+    .ornament { color: var(--violet); letter-spacing: .35em; }
+    .feature-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: -8px; }
+    .feature { text-align: center; padding: 22px 8px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); }
+    .feature .icon { display: block; font-size: 27px; margin-bottom: 6px; }
+    .feature strong { display: block; color: var(--lavender); font-family: Georgia, serif; font-size: 17px; }
+    section { padding: 76px 0 18px; }
+    .section-title { font-family: Georgia, serif; color: var(--lavender); font-size: clamp(27px, 4vw, 38px); margin: 0 0 10px; }
+    .section-intro { color: var(--muted); max-width: 760px; margin: 0 0 28px; }
+    .about-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 22px; align-items: stretch; }
+    .panel { border: 1px solid var(--line); border-radius: 20px; padding: 26px; background: linear-gradient(145deg, #191129df, #100a1ee8); box-shadow: var(--glow); }
+    .panel h3 { margin: 0 0 12px; color: var(--pink); font-family: Georgia, serif; font-size: 22px; }
+    .panel p, .panel li { color: var(--muted); }
+    ul.clean { padding-left: 20px; margin-bottom: 0; }
+    li::marker { color: var(--violet); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { display: block; text-decoration: none; border: 1px solid var(--line); border-radius: 18px; padding: 25px; background: #151026cc; transition: transform .2s, background .2s; }
+    .card:hover { transform: translateY(-4px); background: #211435; }
+    .card .icon { font-size: 32px; }
+    .card h3 { margin: 8px 0; color: var(--lavender); font-family: Georgia, serif; font-size: 23px; }
+    .card p { color: var(--muted); margin: 0; }
+    .notice { border-left: 3px solid var(--violet); background: #201333aa; padding: 14px 17px; color: var(--muted); border-radius: 0 12px 12px 0; margin-top: 20px; }
+    .report-template { background: #0d0918; border: 1px dashed #a66be0; border-radius: 14px; padding: 18px; color: var(--muted); }
+    .report-template p { margin: 7px 0; }
+    .join-box { text-align: center; padding: 46px 22px; border: 1px solid var(--line); border-radius: 24px;
+      background: radial-gradient(ellipse at top, #48256866, transparent 65%), #151026aa; }
+    .join-box h2 { font-family: Georgia, serif; color: var(--lavender); font-size: clamp(28px, 4vw, 42px); margin: 0 0 8px; }
+    .join-box p { color: var(--muted); margin: 0 auto 22px; max-width: 650px; }
+    footer { margin-top: 70px; padding: 30px 0 40px; text-align: center; border-top: 1px solid var(--line); color: var(--muted); }
+    footer .brandline { font-family: Georgia, serif; color: var(--lavender); font-size: 22px; }
+    .small { font-size: 12px; opacity: .75; }
+    @media (max-width: 850px) {
+      .nav { padding: 13px 0; align-items: flex-start; flex-direction: column; }
+      .links { gap: 13px; }
+      .feature-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 460px) {
+      .links { gap: 10px; }
+      .links a { font-size: 13px; }
+      .hero { padding: 65px 0 55px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .panel { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">꧁❥ Eℓ Rιⁿᶜóⁿ ∂eℓ Cнιѕмe ✩</a>
+    <nav class="links" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#nosotros">Sobre nosotros</a><a href="#normas">Normas</a>
+      <a href="#alianzas">Alianzas</a><a href="#reportes">Reportes</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" id="inicio">
+    <span class="moon" aria-hidden="true">☾</span>
+    <div>
+      <div class="eyebrow">✦ Un rincón bajo las estrellas ✦</div>
+      <h1>꧁❥:･°⋆✩ Eℓ Rιⁿᶜóⁿ<br>∂eℓ Cнιѕмe ✩⋆:•°꧂</h1>
+      <div class="ornament">⋆｡°✩ ─────── ✧ ─────── ✩°｡⋆</div>
+      <p>Un lugar para compartir, conocer y disfrutar. Charlas, chismes, música, libros, memes y muchas historias por descubrir.</p>
+      <a class="btn" href="https://discord.gg/w2wWzG2C6" target="_blank" rel="noopener noreferrer">☾ &nbsp; Unirme al servidor &nbsp; ↗</a>
+      <p class="small">¡Te esperamos en nuestro rincón!</p>
+    </div>
+  </section>
+
+  <div class="wrap feature-grid" aria-label="Temáticas de la comunidad">
+    <div class="feature"><span class="icon">📚</span><strong>Libros</strong><span>y recomendaciones</span></div>
+    <div class="feature"><span class="icon">🎶</span><strong>Música</strong><span>y artistas favoritos</span></div>
+    <div class="feature"><span class="icon">☕</span><strong>Charlas</strong><span>y chismes</span></div>
+    <div class="feature"><span class="icon">🎮</span><strong>Juegos</strong><span>y actividades</span></div>
+    <div class="feature"><span class="icon">🎨</span><strong>Arte</strong><span>y creatividad</span></div>
+    <div class="feature"><span class="icon">💜</span><strong>Amistades</strong><span>y mucho más</span></div>
+  </div>
+
+  <section class="wrap" id="nosotros">
+    <h2 class="section-title">☾ Sobre nosotros <span class="ornament">──────── ✧</span></h2>
+    <p class="section-intro">Un pequeño rincón para compartir gustos, descubrir intereses y conversar con respeto.</p>
+    <div class="about-grid">
+      <article class="panel">
+        <h3>♡ ¡Bienvenid@ a la comunidad!</h3>
+        <p><strong>El Rincón del Chisme</strong> es una comunidad de Discord creada para compartir intereses, conocer personas y disfrutar de un espacio donde siempre haya algo de qué hablar.</p>
+        <p>Podés participar en conversaciones, compartir recomendaciones, publicar tus creaciones y sumarte a las actividades de la comunidad.</p>
+        <p class="ornament">✦ Un pequeño rincón, muchas historias por compartir. ✦</p>
+      </article>
+      <aside class="panel">
+        <h3>✧ Lo que nos une</h3>
+        <ul class="clean">
+          <li>Respeto y buena convivencia.</li>
+          <li>Conversaciones e intereses variados.</li>
+          <li>Creatividad, juegos y actividades.</li>
+          <li>Un espacio para compartir sin presiones.</li>
+          <li>Una comunidad que cuidamos entre todos.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" id="normas">
+    <h2 class="section-title">📜 Normas de la comunidad</h2>
+    <p class="section-intro">Leé estas reglas con atención y ayudanos a mantener El Rincón del Chisme como un espacio agradable y seguro para la comunidad.</p>
+
+    <div class="panel">
+      <h3>✦ Normas generales</h3>
+      <ol class="clean">
+        <li><strong>Contenido explícito:</strong> no se permite contenido sensible, gore, contenido para adultos (+18), NSFW ni sus variantes.</li>
+        <li><strong>Acoso:</strong> no se permite el acoso. Las bromas entre amistades deben respetar los límites de cada persona. Si sufrís acoso o discriminación, abrí un ticket para informar al staff.</li>
+        <li><strong>Humor:</strong> se permite el humor pesado u oscuro siempre que se respeten los límites de los demás. Si alguien pide que pares con una broma o un tema, hacelo. El acoso, el grooming, la suplantación engañosa de identidad (catfish) y las amenazas, incluido el doxxing, pueden ser sancionados o resultar en un baneo.</li>
+        <li><strong>Edad:</strong> el servidor está pensado principalmente para personas de 15 años en adelante, con madurez y tolerancia al humor. Si tenés menos de 15, la regla original indica que podés entrar bajo tu propia discreción, siempre que cumplas las condiciones de uso de Discord.</li>
+        <li><strong>Spam:</strong> no se permiten flood, cadenas ni walltext sin contexto. Los textos extensos deben tener contexto y no superar las 10 líneas según la regla del servidor. El spam reiterado puede ser sancionado.</li>
+        <li><strong>Uso de los canales:</strong> cada canal y categoría tiene una función. Utilizalos de manera adecuada.</li>
+        <li><strong>Sanciones:</strong> no intentes evitar una sanción saliendo del servidor o usando cuentas alternativas. Si considerás que una sanción fue injusta, abrí un ticket y explicá tu situación con respeto y argumentos.</li>
+        <li><strong>Staff:</strong> respetá al equipo de moderación. No te hagas pasar por integrante del staff ni difundas rumores o acusaciones falsas. Las decisiones de moderación deben tratarse mediante los canales correspondientes.</li>
+        <li><strong>Promoción:</strong> no se permite hacer spam ni promocionar redes sociales o servidores sin autorización. Para colaboraciones, podés solicitar una alianza.</li>
+        <li><strong>Tickets:</strong> no hagas un uso indebido del sistema de tickets. Las solicitudes deben tener un motivo legítimo; el abuso del sistema puede ser sancionado.</li>
+        <li><strong>Términos de Discord:</strong> todos los integrantes deben respetar las normas y los términos de servicio de Discord.</li>
+      </ol>
+      <div class="notice">La falta de conocimiento de las reglas no exime de posibles sanciones. Si tenés dudas, consultá al staff mediante los canales de soporte.</div>
+      <p style="margin-top:18px">Consultá también las reglas oficiales de Discord:</p>
+      <p><a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer">Normas de la comunidad de Discord ↗</a><br>
+      <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Términos de servicio de Discord ↗</a></p>
+    </div>
+
+    <div class="panel" style="margin-top:20px">
+      <h3>🎧 Normas de los canales de voz (VC)</h3>
+      <ol class="clean">
+        <li><strong>Uso del canal:</strong> respetá el propósito de cada canal de voz y no ingreses a canales cerrados.</li>
+        <li><strong>Convivencia:</strong> mantené un ambiente amigable y evitá discusiones que puedan incomodar o molestar a otras personas.</li>
+        <li><strong>Sonidos:</strong> no uses sonidos distorsionados ni el panel de sonidos para hacer spam, molestar o impedir que otras personas hablen.</li>
+        <li><strong>Música:</strong> respetá a quienes estén escuchando música.</li>
+        <li><strong>Contenido explícito:</strong> no se permite contenido explícito en ningún canal de voz.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap" id="alianzas">
+    <h2 class="section-title">🤝 Alianzas y colaboraciones</h2>
+    <p class="section-intro">¿Tenés un servidor y te gustaría colaborar con El Rincón del Chisme? Podés enviar una solicitud para que nuestro equipo la evalúe.</p>
+    <div class="panel">
+      <h3>Requisitos generales</h3>
+      <ul class="clean">
+        <li>Contar con un canal público y visible destinado a las alianzas.</li>
+        <li>Disponer de un equipo de moderación activo.</li>
+        <li>Cumplir las normas de Discord y los criterios de colaboración de nuestra comunidad.</li>
+      </ul>
+      <h3 style="margin-top:22px">Cómo solicitar una alianza</h3>
+      <ol class="clean">
+        <li>Ingresá a nuestro servidor de Discord.</li>
+        <li>Abrí un ticket de alianza en el canal correspondiente.</li>
+        <li>Presentá el banner de tu servidor y una invitación válida.</li>
+        <li>Esperá la revisión del equipo administrativo.</li>
+      </ol>
+      <div class="notice">Enviar una solicitud no garantiza su aprobación. Asegurate de que los requisitos coincidan con los que usa realmente tu staff.</div>
+      <p style="margin-top:22px"><a class="btn secondary" href="https://discord.com/channels/1536790525389181012/1564172272737058896" target="_blank" rel="noopener noreferrer">Solicitar una alianza en Discord ↗</a></p>
+    </div>
+  </section>
+
+  <section class="wrap" id="reportes">
+    <h2 class="section-title">🎟️ Centro de ayuda y reportes</h2>
+    <p class="section-intro">Si necesitás asistencia administrativa, utilizá el sistema de tickets de Discord para comunicarte de forma privada con el equipo de moderación.</p>
+    <div class="cards">
+      <article class="card"><span class="icon">🛡️</span><h3>Reportar un incidente</h3><p>Para informar sobre acoso, discriminación, amenazas, suplantación de identidad o divulgación de datos privados.</p><p style="margin-top:14px"><a class="btn secondary" href="https://discord.com/channels/1536790525389181012/1538335667841531904" target="_blank" rel="noopener noreferrer">Abrir canal Reportes ↗</a></p></article>
+      <article class="card"><span class="icon">⚖️</span><h3>Apelar una sanción</h3><p>Si considerás que una moderación fue incorrecta, podés pedir una revisión privada al equipo.</p><p style="margin-top:14px"><a class="btn secondary" href="https://discord.com/channels/1536790525389181012/1564175879612137512" target="_blank" rel="noopener noreferrer">Solicitar revisión ↗</a></p></article>
+      <article class="card"><span class="icon">💌</span><h3>Consultas y sugerencias</h3><p>Hacé preguntas o compartí ideas para mejorar la comunidad mediante una solicitud privada.</p><p style="margin-top:14px"><a class="btn secondary" href="https://discord.com/channels/1536790525389181012/1564176049384718366" target="_blank" rel="noopener noreferrer">Consultar o sugerir ↗</a></p></article>
+    </div>
+    <div class="panel" style="margin-top:18px">
+      <h3>📋 Formato sugerido para un reporte</h3>
+      <div class="report-template">
+        <p><strong>Usuario involucrado:</strong> nombre de usuario o ID, si está disponible.</p>
+        <p><strong>Descripción del incidente:</strong> qué ocurrió y qué norma considerás que se incumplió.</p>
+        <p><strong>Evidencia:</strong> capturas completas o enlaces a los mensajes, cuando estén disponibles.</p>
+        <p><strong>Información adicional:</strong> cualquier dato relevante para comprender el caso.</p>
+      </div>
+      <div class="notice">Compartí pruebas relevantes dentro del ticket y evitá publicar información privada en canales públicos.</div>
+      <h3 style="margin-top:22px">🎫 ¿Cómo funciona Ticket Tool?</h3>
+      <p>Ticket Tool organiza las solicitudes en espacios privados para que puedas hablar con el equipo de moderación sin exponer tu caso públicamente.</p>
+      <ul class="clean">
+        <li><strong>Solicitudes por categoría:</strong> ayuda, consultas, sugerencias o apelaciones.</li>
+        <li><strong>Atención ordenada:</strong> el staff puede gestionar y asignar los casos.</li>
+        <li><strong>Preguntas previas e historial:</strong> se pueden configurar formularios y guardar transcripciones al cerrar un ticket.</li>
+      </ul>
+      <p class="small" style="margin-top:10px">Las funciones disponibles dependen de la configuración del bot en nuestro servidor.</p>
+      <p style="margin-top:22px"><a class="btn secondary" href="https://discord.com/channels/1536790525389181012/1538324104543998085" target="_blank" rel="noopener noreferrer">Ir al canal de tickets para pedir ayuda ↗</a></p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="join-box">
+      <div class="ornament">⋆｡°✩ ───── ☾ ───── ✩°｡⋆</div>
+      <h2>¿Te gustaría unirte?</h2>
+      <p>Conocé nuestros canales, compartí tus intereses y encontrá tu lugar en esta comunidad. ¡Te esperamos bajo las estrellas!</p>
+      <a class="btn" href="https://discord.gg/w2wWzG2C6" target="_blank" rel="noopener noreferrer">💜 Unirme al servidor</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brandline">꧁❥:･°⋆✩ Eℓ Rιⁿᶜóⁿ ∂eℓ Cнιѕмe ✩⋆:•°꧂</div>
+    <p>Un pequeño rincón, muchas historias por compartir.</p>
+    <div class="small">Página comunitaria de El Rincón del Chisme · Discord</div>
+  </div>
+</footer>
+</body>
+</html>
